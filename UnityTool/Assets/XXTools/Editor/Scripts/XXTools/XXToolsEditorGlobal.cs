@@ -27,7 +27,7 @@ namespace XXToolsEditor
             {
                 if (_db == null)
                 {
-
+                    LoadDatabase(true);
                 }
                 return _db;
             }
@@ -108,8 +108,10 @@ namespace XXToolsEditor
             eds.Sort(delegate (XXToolsDBEdInfo a, XXToolsDBEdInfo b) { return a.priority.CompareTo(b.priority); });
             DBEditors = new DatabaseEdBase[eds.Count];
             DBEdNames = new string[eds.Count];
+
             for (int i = 0; i < eds.Count; i++)
             {
+                Debug.Log(eds[i].name);
                 DBEdNames[i] = eds[i].name;
                 DBEditors[i] = eds[i].editor;
             }

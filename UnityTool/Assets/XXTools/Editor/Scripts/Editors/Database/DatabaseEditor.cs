@@ -46,8 +46,10 @@ namespace XXToolsEditor
 
         void OnGUI()
         {
+            
             if (!inited) Init();
 
+            
             if(db == null)
             {
                 Close();
@@ -59,6 +61,9 @@ namespace XXToolsEditor
             XXToolsEdGui.UseSkin();
 
             int prev = currDbArea;
+
+            currDbArea = GUILayout.Toolbar(currDbArea, XXToolsEditorGlobal.DBEdNames, XXToolsEdGui.ToolbarStyle);
+
             if(currDbArea != prev)
             {
                 XXToolsEditorGlobal.DBEditors[prev].OnDisable(this);
@@ -73,6 +78,8 @@ namespace XXToolsEditor
             {
                 Repaint();
             }
+            
+
         }
     }
 }

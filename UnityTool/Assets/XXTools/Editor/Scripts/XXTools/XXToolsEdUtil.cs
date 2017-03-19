@@ -40,7 +40,6 @@ namespace XXToolsEditor
 
         public static string ProjectRelativePath(string fullPath)
         {
-            // first convert \ to / cause in unity we want / not \
             fullPath = fullPath.Replace("\\", "/");
 
             // ...
