@@ -15,6 +15,7 @@ namespace XXToolsEditor
         public const string DB_FILE = "Assets/XXTools Data/Database.prefab";
         public const string DB_DATA_PATH = "Assets/XXTools Data/Database_Data/";
         public const string DB_PATH = "Assets/XXTools Data/";
+        public const string DB_ACTOR_PATH = "Assets/XXTools Data/Database_Data/Actors";
 
         private static Database _db = null;
 
@@ -254,7 +255,9 @@ namespace XXToolsEditor
 
         private static void InitDatabaseDefaults(Database db)
         {
-
+            Database.InitData(db);
+            EditorUtility.SetDirty(db);
+            AssetDatabase.SaveAssets();
         }
 
         #endregion

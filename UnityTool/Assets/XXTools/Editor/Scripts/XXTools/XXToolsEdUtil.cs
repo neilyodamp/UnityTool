@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 
 namespace XXToolsEditor
 {
@@ -54,6 +56,52 @@ namespace XXToolsEditor
         {
             path = FullProjectPath + "/" + path;
             return Directory.Exists(path);
+        }
+
+        public static List<T> FindPrefabsOfTypeAll<T>(string progressbarTitle, string progressbarInfo)
+        where T : Component
+        {
+            DirectoryInfo dir = new DirectoryInfo(XXToolsEdUtil.FullProjectAssetsPath);
+            FileInfo[] files = dir.GetFiles("*.prefab", SearchOption.AllDirectories);
+            string fn = "";
+
+            float progress = 0f;
+            float step = 1f / (float)files.Length;
+            EditorUtility.DisplayProgressBar(progressbarTitle, progressbarInfo, progress);
+
+            List<T> res = new List<T>();
+            for (int i = 0; i < files.Length; i++)
+            {
+                progress += step;
+                EditorUtility.DisplayProgressBar(progressbarTitle, progressbarInfo, progress);
+                if (files[i] == null) continue;
+                fn = XXToolsEdUtil.ProjectRelativePath(files[i].FullName);
+                if (!string.IsNullOrEmpty(fn))
+                {
+                    Object obj = AssetDatabase.LoadAssetAtPath(fn, typeof(T));
+                    if (obj != null) res.Add((T)obj);
+                }
+            }
+            EditorUtility.ClearProgressBar();
+
+            return res;
+        }
+
+        public static List<string> FindFileNames(string path,string pattern = ".*")
+        {
+            List<string> findes = new List<string>();
+            DirectoryInfo dir = new DirectoryInfo(path);
+
+            FileInfo[] files = dir.GetFiles(pattern, SearchOption.AllDirectories);
+
+            
+            foreach (FileInfo file in files)
+            {
+                findes.Add(file.Name);
+            }
+            
+
+            return findes;
         }
 
     }

@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 04665d6b8dc243b4ab16558a4a8ddc3a
+timeCreated: 1489998781
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 3101_remu_female_body
+    100002: 3101_remu_female_body_face
+    100004: 3101_remu_female_body_hair
+    100006: Bip01
+    100008: Bip01 Head
+    100010: Bip01 L Calf
+    100012: Bip01 L Clavicle
+    100014: Bip01 L Finger0
+    100016: Bip01 L Finger01
+    100018: Bip01 L Foot
+    100020: Bip01 L Forearm
+    100022: Bip01 L Hand
+    100024: Bip01 L Thigh
+    100026: Bip01 L UpperArm
+    100028: Bip01 Neck
+    100030: Bip01 Pelvis
+    100032: Bip01 R Calf
+    100034: Bip01 R Clavicle
+    100036: Bip01 R Finger0
+    100038: Bip01 R Finger01
+    100040: Bip01 R Foot
+    100042: Bip01 R Forearm
+    100044: Bip01 R Hand
+    100046: Bip01 R Thigh
+    100048: Bip01 R UpperArm
+    100050: Bip01 Spine
+    100052: Bip01 Spine1
+    100054: Bone01
+    100056: Bone01(mirrored)
+    100058: Bone01(mirrored)(mirrored)
+    100060: Bone01(mirrored)(mirrored)(mirrored)
+    100062: Bone02
+    100064: Bone02(mirrored)
+    100066: Bone02(mirrored)(mirrored)
+    100068: Bone02(mirrored)(mirrored)(mirrored)
+    100070: Bone03
+    100072: Bone03(mirrored)
+    100074: Bone03(mirrored)(mirrored)
+    100076: Bone03(mirrored)(mirrored)(mirrored)
+    100078: Bone04
+    100080: Bone05
+    100082: Bone06
+    100084: Bone07
+    100086: Bone08
+    100088: Bone08(mirrored)
+    100090: Bone09
+    100092: Bone09(mirrored)
+    100094: Bone10
+    100096: Bone10(mirrored)
+    100098: Bone12
+    100100: Bone14
+    100102: Bone15
+    100104: Bone16
+    100106: Bone17
+    100108: Bone22
+    100110: Bone22(mirrored)
+    100112: Bone23
+    100114: Bone23(mirrored)
+    100116: //RootNode
+    100118: G0012_weapon
+    100120: p_rpalm
+    100122: t_backput
+    100124: t_crotch
+    100126: t_footprint
+    100128: t_lpalm
+    100130: t_rpalm
+    400000: 3101_remu_female_body
+    400002: 3101_remu_female_body_face
+    400004: 3101_remu_female_body_hair
+    400006: Bip01
+    400008: Bip01 Head
+    400010: Bip01 L Calf
+    400012: Bip01 L Clavicle
+    400014: Bip01 L Finger0
+    400016: Bip01 L Finger01
+    400018: Bip01 L Foot
+    400020: Bip01 L Forearm
+    400022: Bip01 L Hand
+    400024: Bip01 L Thigh
+    400026: Bip01 L UpperArm
+    400028: Bip01 Neck
+    400030: Bip01 Pelvis
+    400032: Bip01 R Calf
+    400034: Bip01 R Clavicle
+    400036: Bip01 R Finger0
+    400038: Bip01 R Finger01
+    400040: Bip01 R Foot
+    400042: Bip01 R Forearm
+    400044: Bip01 R Hand
+    400046: Bip01 R Thigh
+    400048: Bip01 R UpperArm
+    400050: Bip01 Spine
+    400052: Bip01 Spine1
+    400054: Bone01
+    400056: Bone01(mirrored)
+    400058: Bone01(mirrored)(mirrored)
+    400060: Bone01(mirrored)(mirrored)(mirrored)
+    400062: Bone02
+    400064: Bone02(mirrored)
+    400066: Bone02(mirrored)(mirrored)
+    400068: Bone02(mirrored)(mirrored)(mirrored)
+    400070: Bone03
+    400072: Bone03(mirrored)
+    400074: Bone03(mirrored)(mirrored)
+    400076: Bone03(mirrored)(mirrored)(mirrored)
+    400078: Bone04
+    400080: Bone05
+    400082: Bone06
+    400084: Bone07
+    400086: Bone08
+    400088: Bone08(mirrored)
+    400090: Bone09
+    400092: Bone09(mirrored)
+    400094: Bone10
+    400096: Bone10(mirrored)
+    400098: Bone12
+    400100: Bone14
+    400102: Bone15
+    400104: Bone16
+    400106: Bone17
+    400108: Bone22
+    400110: Bone22(mirrored)
+    400112: Bone23
+    400114: Bone23(mirrored)
+    400116: //RootNode
+    400118: G0012_weapon
+    400120: p_rpalm
+    400122: t_backput
+    400124: t_crotch
+    400126: t_footprint
+    400128: t_lpalm
+    400130: t_rpalm
+    2300000: G0012_weapon
+    3300000: G0012_weapon
+    4300000: 3101_remu_female_body
+    4300002: 3101_remu_female_body_face
+    4300004: 3101_remu_female_body_hair
+    4300006: G0012_weapon
+    9500000: //RootNode
+    13700000: 3101_remu_female_body
+    13700002: 3101_remu_female_body_face
+    13700004: 3101_remu_female_body_hair
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

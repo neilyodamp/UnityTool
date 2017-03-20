@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: c668c74a750032944b42f7414f72c0b6
+timeCreated: 1489998781
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 3101_remu_body
+    100002: 3101_remu_face
+    100004: 3101_remu_hair
+    100006: 3101_remu_shuangdao_01
+    100008: 3101_remu_shuangdao_02
+    100010: Bip01
+    100012: Bip01 Head
+    100014: Bip01 L Calf
+    100016: Bip01 L Clavicle
+    100018: Bip01 L Finger0
+    100020: Bip01 L Finger01
+    100022: Bip01 L Foot
+    100024: Bip01 L Forearm
+    100026: Bip01 L Hand
+    100028: Bip01 L Thigh
+    100030: Bip01 L UpperArm
+    100032: Bip01 Neck
+    100034: Bip01 Pelvis
+    100036: Bip01 R Calf
+    100038: Bip01 R Clavicle
+    100040: Bip01 R Finger0
+    100042: Bip01 R Finger01
+    100044: Bip01 R Foot
+    100046: Bip01 R Forearm
+    100048: Bip01 R Hand
+    100050: Bip01 R Thigh
+    100052: Bip01 R UpperArm
+    100054: Bip01 Spine
+    100056: Bip01 Spine1
+    100058: Bone01
+    100060: Bone01(mirrored)
+    100062: Bone01(mirrored)(mirrored)
+    100064: Bone01(mirrored)(mirrored)(mirrored)
+    100066: Bone02
+    100068: Bone02(mirrored)
+    100070: Bone02(mirrored)(mirrored)
+    100072: Bone02(mirrored)(mirrored)(mirrored)
+    100074: Bone03
+    100076: Bone03(mirrored)
+    100078: Bone03(mirrored)(mirrored)
+    100080: Bone03(mirrored)(mirrored)(mirrored)
+    100082: Bone04
+    100084: Bone05
+    100086: Bone06
+    100088: Bone07
+    100090: Bone08
+    100092: Bone08(mirrored)
+    100094: Bone09
+    100096: Bone09(mirrored)
+    100098: Bone10
+    100100: Bone10(mirrored)
+    100102: Bone12
+    100104: Bone14
+    100106: Bone15
+    100108: Bone16
+    100110: Bone17
+    100112: Bone22
+    100114: Bone22(mirrored)
+    100116: Bone23
+    100118: Bone23(mirrored)
+    100120: //RootNode
+    100122: p_lpalm
+    100124: p_rpalm
+    100126: t_backput
+    100128: t_crotch
+    100130: t_footprint
+    100132: t_lpalm
+    100134: t_rpalm
+    400000: 3101_remu_body
+    400002: 3101_remu_face
+    400004: 3101_remu_hair
+    400006: 3101_remu_shuangdao_01
+    400008: 3101_remu_shuangdao_02
+    400010: Bip01
+    400012: Bip01 Head
+    400014: Bip01 L Calf
+    400016: Bip01 L Clavicle
+    400018: Bip01 L Finger0
+    400020: Bip01 L Finger01
+    400022: Bip01 L Foot
+    400024: Bip01 L Forearm
+    400026: Bip01 L Hand
+    400028: Bip01 L Thigh
+    400030: Bip01 L UpperArm
+    400032: Bip01 Neck
+    400034: Bip01 Pelvis
+    400036: Bip01 R Calf
+    400038: Bip01 R Clavicle
+    400040: Bip01 R Finger0
+    400042: Bip01 R Finger01
+    400044: Bip01 R Foot
+    400046: Bip01 R Forearm
+    400048: Bip01 R Hand
+    400050: Bip01 R Thigh
+    400052: Bip01 R UpperArm
+    400054: Bip01 Spine
+    400056: Bip01 Spine1
+    400058: Bone01
+    400060: Bone01(mirrored)
+    400062: Bone01(mirrored)(mirrored)
+    400064: Bone01(mirrored)(mirrored)(mirrored)
+    400066: Bone02
+    400068: Bone02(mirrored)
+    400070: Bone02(mirrored)(mirrored)
+    400072: Bone02(mirrored)(mirrored)(mirrored)
+    400074: Bone03
+    400076: Bone03(mirrored)
+    400078: Bone03(mirrored)(mirrored)
+    400080: Bone03(mirrored)(mirrored)(mirrored)
+    400082: Bone04
+    400084: Bone05
+    400086: Bone06
+    400088: Bone07
+    400090: Bone08
+    400092: Bone08(mirrored)
+    400094: Bone09
+    400096: Bone09(mirrored)
+    400098: Bone10
+    400100: Bone10(mirrored)
+    400102: Bone12
+    400104: Bone14
+    400106: Bone15
+    400108: Bone16
+    400110: Bone17
+    400112: Bone22
+    400114: Bone22(mirrored)
+    400116: Bone23
+    400118: Bone23(mirrored)
+    400120: //RootNode
+    400122: p_lpalm
+    400124: p_rpalm
+    400126: t_backput
+    400128: t_crotch
+    400130: t_footprint
+    400132: t_lpalm
+    400134: t_rpalm
+    2300000: 3101_remu_shuangdao_01
+    2300002: 3101_remu_shuangdao_02
+    3300000: 3101_remu_shuangdao_01
+    3300002: 3101_remu_shuangdao_02
+    4300000: 3101_remu_body
+    4300002: 3101_remu_face
+    4300004: 3101_remu_hair
+    4300006: 3101_remu_shuangdao_01
+    4300008: 3101_remu_shuangdao_02
+    9500000: //RootNode
+    13700000: 3101_remu_body
+    13700002: 3101_remu_face
+    13700004: 3101_remu_hair
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
