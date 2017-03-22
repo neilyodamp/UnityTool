@@ -16,19 +16,53 @@ namespace XXTools
         #endregion
 
         #region System->FBXSetting
-        public Actor.AnimationType animType;
+        public ModelImporterAnimationType animType;
         public bool optiomaize;
 
-        //public Actor.Animatio
+        public List<GameObject> actorComponesPrefabs;
         #endregion
 
-        public List<Actor> actors;
-        #region Init Data
+        public List<GameObject> actorsPrefabs;
+        //public List<Actor> actors;
+
+        private Actor[] _actorsCache = null;
+
+        public Actor[] Actors {
+
+            get
+            {
+                if (_actorsCache!=null)
+                {
+#if UNITY_EDITOR 
+                    if (_actorsCache.Length == actorsPrefabs.Count && (_actorsCache.Length == 0 || (
+                        _actorsCache.Length > 0 && _actorsCache[0] != null)))
+                        return _actorsCache;
+#else
+                    return _actorsCache;
+#endif
+                }
+                _actorsCache = new Actor[actorsPrefabs.Count];
+
+                for (int i =0;i< actorsPrefabs.Count;i++)
+                {
+                    if (actorsPrefabs[i] == null) _actorsCache[i] = null;
+                    else _actorsCache[i] = actorsPrefabs[i].GetComponent<Actor>();
+                }
+
+                return _actorsCache;
+            }
+
+        }
+
+
+#region Init Data
         public static void InitData(Database db)
         {
             InitPathFrom(db);
+            InitFBXSetting(db);
             InitActors(db);
         }
+
         private static void InitPathFrom(Database db)
         {
             db.name2Paths = new Name2Path[3];
@@ -41,18 +75,18 @@ namespace XXTools
 
         private static void InitFBXSetting(Database db)
         {
-            db.animType = Actor.AnimationType.Generic;
+            db.animType = ModelImporterAnimationType.Generic;
             db.optiomaize = true;
             //db.animType = Actor.
         }
         
         private static void InitActors(Database db)
         {
-            db.actors = new List<Actor>();
-
+            db.actorsPrefabs = new List<GameObject>();
+            
         }
 
-        #endregion
+#endregion
         
         [System.Serializable]
         public class Name2Path

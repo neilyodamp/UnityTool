@@ -743,6 +743,39 @@ namespace XXToolsEditor
             EditorGUILayout.EndVertical();
             return selected;
         }
+        public static int Menu2(int selected, string[] menuItems, params GUILayoutOption[] options)
+        {
+            if (selected >= menuItems.Length || selected < 0) selected = 0;
+            EditorGUILayout.BeginVertical(MenuBoxStyle, options);
+            {
+                GUILayout.Space(20);
+
+                for (int i = 0; i < menuItems.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(menuItems[i])) { GUILayout.Space(15); continue; }
+
+                    if (menuItems[i][0] == '-')
+                    {
+                        if (menuItems[i].Length > 1)
+                        {
+                            GUILayout.Label(menuItems[i].Substring(1));
+                        }
+                        else
+                        {
+                            XXToolsEdGui.DrawHorizontalLine(1, XXToolsEdGui.DividerColor, 5, 5);
+                        }
+                        continue;
+                    }
+
+                    if (GUILayout.Toggle((i == selected), menuItems[i])) selected = i;
+                }
+
+                GUILayout.FlexibleSpace();
+            }
+            EditorGUILayout.EndVertical();
+            return selected;
+        }
+
 
         #endregion
         // ================================================================================================================

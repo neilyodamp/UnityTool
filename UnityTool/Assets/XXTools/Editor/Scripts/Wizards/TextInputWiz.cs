@@ -44,8 +44,8 @@ namespace XXToolsEditor
         private void Init()
         {
             inited = true;
-            minSize = new Vector2(250, 120);
-            maxSize = new Vector2(250, 120);
+            minSize = new Vector2(250, 500);
+            maxSize = new Vector2(250, 500);
         }
 
         void OnFocus() { lostFocus = false; }

@@ -104,5 +104,15 @@ namespace XXToolsEditor
             return findes;
         }
 
+        public static List<T> CleanupList<T>(List<T> list)
+        where T : UnityEngine.Object
+        {
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                if (list[i] == null || !list[i]) list.RemoveAt(i);
+            }
+
+            return list;
+        }
     }
 }

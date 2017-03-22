@@ -15,7 +15,8 @@ namespace XXToolsEditor
         public const string DB_FILE = "Assets/XXTools Data/Database.prefab";
         public const string DB_DATA_PATH = "Assets/XXTools Data/Database_Data/";
         public const string DB_PATH = "Assets/XXTools Data/";
-        public const string DB_ACTOR_PATH = "Assets/XXTools Data/Database_Data/Actors";
+        public const string DB_ACTOR_PATH = "Assets/XXTools Data/Database_Data/Actors/";
+        public const string DB_ACTORCOM_PATH = "Assets/XXTools Data/Database_Data/ActorsCom/";
 
         private static Database _db = null;
 
@@ -227,7 +228,8 @@ namespace XXToolsEditor
 
             CheckDatabasePath(DB_PATH, DB_DATA_PATH);
 
-            //CheckDatabasePath(DB_DATA_PATH, DB_GUI_PATH);
+            CheckDatabasePath(DB_DATA_PATH, DB_ACTOR_PATH);
+            CheckDatabasePath(DB_DATA_PATH, DB_ACTORCOM_PATH);
             //CheckDatabasePath(DB_DATA_PATH, DB_DEFS_PATH);
             //CheckDatabasePath(DB_DATA_PATH, DB_SKILLS_PATH);
             //CheckDatabasePath(DB_DATA_PATH, DB_EVENTS_PATH);

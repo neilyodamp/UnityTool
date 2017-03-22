@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Actor : MonoBehaviour {
 
@@ -8,26 +9,27 @@ public class Actor : MonoBehaviour {
     [System.Serializable]
     public class ActorComponent
     {
+
         public string name;
         public string endString;
         public SkinnedMeshRenderer smr;
+        public List<string> canSwapList;
 
+        public Mesh selfMesh; //保留原来自身的mesh
+        
         public ActorComponent(string name,string endString,SkinnedMeshRenderer smr)
         {
             this.name = name;
             this.smr = smr;
-            this.endString = endString;               
+            this.endString = endString;
+            canSwapList = new List<string>();
+            selfMesh = this.smr.sharedMesh;
         }
-
     }
 
-    public enum AnimationType
-    {
-        Legacy,
-        Generic,
-    }
+   
 
-    public AnimationType type = AnimationType.Generic;
+    public ModelImporterAnimationType type = ModelImporterAnimationType.Generic;
 
     private string name = "";
     
@@ -35,7 +37,7 @@ public class Actor : MonoBehaviour {
     private bool optiomaize = true;
 
     [SerializeField]
-    private List<ActorComponent> components;
+    public List<ActorComponent> components;
 
     [SerializeField]
     private GameObject majorBody;
@@ -54,9 +56,15 @@ public class Actor : MonoBehaviour {
 
     }
 
-    private bool inited = false;
-    public Actor(GameObject majorBody)
+    public List<ActorComponent> GetComponents()
     {
+        return components;
+    }
+
+    private bool inited = false;
+    public void InitActor(GameObject majorBody)
+    {
+
         this.majorBody = majorBody;
 
         this.components.Add(new ActorComponent("face", "_face", null));
@@ -65,7 +73,7 @@ public class Actor : MonoBehaviour {
 
     }
 
-    public Actor(GameObject majorBody, List<ActorComponent> components)
+    public void InitActor(GameObject majorBody, List<ActorComponent> components)
     {
         this.majorBody = majorBody;
         this.components = components;
@@ -86,7 +94,6 @@ public class Actor : MonoBehaviour {
         }
 
         this.components.Add(component);
-        //this.components.
     }
     
     public void RmComp(string name)
@@ -126,7 +133,6 @@ public class Actor : MonoBehaviour {
 
         if(!inited)
             Init();
-
     }
 
     // Use this for initialization

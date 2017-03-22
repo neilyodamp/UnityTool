@@ -193,6 +193,16 @@ ModelImporter:
     400182: TaoZhuang_junzhuang_nv_001_toufa
     400184: wuqi
     400186: wuqi-guadian
+    2300000: nv_face_001
+    2300002: TaoZhuang_JianShi_nv_001_tui
+    2300004: TaoZhuang_junzhuang_nv_001_jiao
+    2300006: TaoZhuang_junzhuang_nv_001_shangshen
+    2300008: TaoZhuang_junzhuang_nv_001_toufa
+    3300000: nv_face_001
+    3300002: TaoZhuang_JianShi_nv_001_tui
+    3300004: TaoZhuang_junzhuang_nv_001_jiao
+    3300006: TaoZhuang_junzhuang_nv_001_shangshen
+    3300008: TaoZhuang_junzhuang_nv_001_toufa
     4300000: TaoZhuang_junzhuang_nv_001_shangshen
     4300002: TaoZhuang_junzhuang_nv_001_toufa
     4300004: TaoZhuang_junzhuang_nv_001_jiao
@@ -212,7 +222,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
     animationImportErrors: 
     animationImportWarnings: 

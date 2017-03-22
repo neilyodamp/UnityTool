@@ -79,7 +79,6 @@ namespace XXToolsEditor
                 Repaint();
             }
             
-
         }
     }
 }
