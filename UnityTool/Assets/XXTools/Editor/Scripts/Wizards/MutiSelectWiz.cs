@@ -15,14 +15,15 @@ namespace XXToolsEditor
         private List<FileInfo> fileInfoList;
 
         private Vector2 scroll = new Vector2();
-        private int select;
+        //private int select;
+        private bool[] selecteds;
+        public Actor.ActorComponent ac;
 
-
-        public static void Show()
+        public static void Show(Actor.ActorComponent ac)
         {
             MutiSelectWiz window = EditorWindow.GetWindow<MutiSelectWiz>(true, "Add AC", true);
             window.inited = false;
-
+            window.ac = ac;
         }
 
         public void Init()
@@ -37,7 +38,6 @@ namespace XXToolsEditor
 
         private void FindShowList()
         {
-            select = 0;
             showList = new List<string>();
             fileInfoList = new List<FileInfo>();
             DirectoryInfo dir = new DirectoryInfo(XXToolsEdUtil.FullProjectPath + XXToolsEditorGlobal.DB_ACTORCOM_PATH);
@@ -55,10 +55,12 @@ namespace XXToolsEditor
                 showList.Add(fileInfo.Name);
                 fileInfoList.Add(fileInfo);
             }
+            selecteds = new bool[fileInfoList.Count];
         }
         //private void 
         public void OnGUI()
         {
+
             if (!inited) Init();
             XXToolsEdGui.UseSkin();
             EditorGUILayout.BeginVertical();
@@ -74,7 +76,8 @@ namespace XXToolsEditor
             scroll = XXToolsEdGui.BeginScrollView(scroll);
 
             //select = GUILayout.Toolbar(select,showList.ToArray(), XXToolsEdGui.ToolbarStyle);
-            select = XXToolsEdGui.Menu2(select, showList.ToArray(), GUILayout.Width(250));
+            selecteds = XXToolsEdGui.MenuMutiSel(selecteds, showList.ToArray(), GUILayout.Width(250));
+
             XXToolsEdGui.EndScrollView();
             XXToolsEdGui.DrawHorizontalLine(1, XXToolsEdGui.DividerColor, 10, 10);
             GUILayout.Space(3);
@@ -90,7 +93,7 @@ namespace XXToolsEditor
                     FileInfo[] fileInfos = fileInfoList.ToArray();
 
                     //CreateActor(fileInfos[select]);
-
+                    Select();
                     this.Close();
                 };
                 GUI.enabled = true;
@@ -103,6 +106,7 @@ namespace XXToolsEditor
             }
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(10);
+
         }
 
         void OnFocus()
@@ -121,58 +125,19 @@ namespace XXToolsEditor
         {
             //if (lostFocus) this.Close();
         }
-        private void CreateActor(FileInfo fileInfo)
-        {
-            string path = fileInfo.FullName;
-            path = XXToolsEdUtil.ProjectRelativePath(path);
-            GameObject go = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
-            if (go == null)
-                return;
-            CreateActor(go);
-            EditorUtility.UnloadUnusedAssetsImmediate();
-        }
 
-        private void CreateActor(string[] paths)
+        private void Select()
         {
-            foreach (string path in paths)
+            for (int i = 0; i < selecteds.Length; i++)
             {
-                GameObject go = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
-                CreateActor(go);
+                if (selecteds[i])
+                {
+                    string name = fileInfoList[i].Name;
+                    name = name.Split('.')[0];
+                    if (!ac.canSwapList.Contains(name))
+                        ac.canSwapList.Add(name);
+                }
             }
-            EditorUtility.UnloadUnusedAssetsImmediate();
-        }
-
-        private void CreateActor(GameObject model)
-        {
-
-            string fn = XXToolsEditorGlobal.DB_ACTOR_PATH + model.name + ".prefab";
-
-            if (XXToolsEdUtil.RelativeFileExist(fn))
-                fn = AssetDatabase.GenerateUniqueAssetPath(fn);
-
-            GameObject go = PrefabUtility.CreatePrefab(fn, model);
-
-            XXToolsEditorGlobal.DB.actorsPrefabs.Add(go);
-            EditorUtility.SetDirty(XXToolsEditorGlobal.DB);
-            AssetDatabase.SaveAssets();
-
-
-            Actor actor = go.AddComponent<Actor>();
-            // 扫描 skinnedMesh
-            SkinnedMeshRenderer[] smrs = model.GetComponentsInChildren<SkinnedMeshRenderer>();
-
-            List<Actor.ActorComponent> acList = new List<Actor.ActorComponent>();
-
-            foreach (SkinnedMeshRenderer smr in smrs)
-            {
-                string[] strs = smr.name.Split('_');
-                string endStr = "_" + strs[strs.Length - 1];
-                Actor.ActorComponent ac = new Actor.ActorComponent(strs[strs.Length - 1], endStr, smr);
-                acList.Add(ac);
-            }
-
-            actor.InitActor(actor.gameObject, acList);
-
         }
     }
 }

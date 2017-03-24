@@ -13,8 +13,6 @@ namespace XXToolsEditor
         private Actor curr = null;
         private Actor del = null; 
 
-        
-
         public override void OnGUI(DatabaseEditor ed)
         {
             base.OnGUI(ed);
@@ -132,10 +130,10 @@ namespace XXToolsEditor
             if (curr == null) { EditorGUILayout.EndVertical(); return; }
             GUILayout.BeginHorizontal();
             BasicInfo();
-            if (currAc == null) { EditorGUILayout.EndHorizontal(); EditorGUILayout.EndVertical(); return; }
-            ComInfo();
+            if (currAc != null) 
+                ComInfo();
             GUILayout.EndHorizontal();
-
+            AnimSetting();
 
             EditorGUILayout.EndVertical();
         }
@@ -171,6 +169,9 @@ namespace XXToolsEditor
             XXToolsEdGui.EndScrollView();
             EditorGUILayout.EndVertical();
         }
+
+        private string currName = "";
+        private string delName = null;
         private void ComInfo()
         {
             EditorGUILayout.BeginVertical(XXToolsEdGui.BoxStyle, GUILayout.Width(300));
@@ -179,10 +180,11 @@ namespace XXToolsEditor
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label("Can Swap", XXToolsEdGui.Head4Style);
             GUILayout.FlexibleSpace();
+
             if (GUILayout.Button(new GUIContent("Add", XXToolsEdGui.Icon_Plus), EditorStyles.miniButtonLeft))
             {
                 GUI.FocusControl("");
-                MutiSelectWiz.Show();
+                MutiSelectWiz.Show(currAc);
             }
             
             EditorGUILayout.EndHorizontal();
@@ -190,9 +192,52 @@ namespace XXToolsEditor
             GUILayout.Space(7);
             XXToolsEdGui.BeginScrollView(scroll[1], GUILayout.MaxHeight(200));
 
+            for (int i = 0; i < currAc.canSwapList.Count; i++)
+            {
+                string name = currAc.canSwapList[i];
+                EditorGUILayout.BeginHorizontal(GUILayout.Width(DatabaseEditor.LeftPanelWidth - 20), GUILayout.ExpandWidth(false));
+                {
+
+                    if (XXToolsEdGui.ToggleButton(currName.Equals(name),name, XXToolsEdGui.ButtonLeftStyle, GUILayout.Width(160), GUILayout.ExpandWidth(false)))
+                    {
+                        GUI.FocusControl("");
+                        currName = name;
+                    }
+                    if (GUILayout.Button("X", XXToolsEdGui.ButtonRightStyle, GUILayout.Width(20)))
+                    {
+                        delName = name;
+                    }
+
+                }
+                EditorGUILayout.EndHorizontal();
+            }
+
+
             XXToolsEdGui.EndScrollView();
             EditorGUILayout.EndVertical();
+
+            if (delName != null)
+            {
+                if (currName .Equals( delName)) curr = null;
+                currAc.canSwapList.Remove(delName);
+                EditorUtility.SetDirty(ed.db);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                delName = null;
+            }
+
         }
 
+        private void AnimSetting()
+        {
+            EditorGUILayout.BeginVertical(XXToolsEdGui.BoxStyle, GUILayout.Width(240));
+            GUILayout.Label("AnimController", XXToolsEdGui.Head3Style);
+            GUILayout.Space(10);
+
+            Animator animator = curr.GetComponent<Animator>();
+
+            animator.runtimeAnimatorController = (RuntimeAnimatorController)EditorGUILayout.ObjectField(animator.runtimeAnimatorController, typeof(RuntimeAnimatorController));
+            EditorGUILayout.EndVertical();
+        }
     }
 }

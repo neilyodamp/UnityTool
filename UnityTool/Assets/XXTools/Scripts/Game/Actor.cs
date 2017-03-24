@@ -17,6 +17,7 @@ public class Actor : MonoBehaviour {
 
         public Mesh selfMesh; //保留原来自身的mesh
         
+        //public Animation
         public ActorComponent(string name,string endString,SkinnedMeshRenderer smr)
         {
             this.name = name;

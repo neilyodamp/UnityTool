@@ -776,6 +776,41 @@ namespace XXToolsEditor
             return selected;
         }
 
+        public static bool [] MenuMutiSel(bool [] selecteds,string [] menuItems,params GUILayoutOption [] options)
+        {
+            if (selecteds.Length != menuItems.Length)
+            {
+                selecteds = new bool[menuItems.Length];
+            }
+
+            EditorGUILayout.BeginVertical(MenuBoxStyle, options);
+            GUILayout.Space(20);
+
+            
+            for (int i = 0; i < menuItems.Length; i++)
+            {
+                if (string.IsNullOrEmpty(menuItems[i])) { GUILayout.Space(15); continue; }
+
+                if (menuItems[i][0] == '-')
+                {
+                    if (menuItems[i].Length > 1)
+                    {
+                        GUILayout.Label(menuItems[i].Substring(1));
+                    }
+                    else
+                    {
+                        XXToolsEdGui.DrawHorizontalLine(1, XXToolsEdGui.DividerColor, 5, 5);
+                    }
+                    continue;
+                }
+
+                selecteds[i] = GUILayout.Toggle(selecteds[i], menuItems[i]);
+                
+            }
+            GUILayout.FlexibleSpace();
+            EditorGUILayout.EndVertical();
+            return selecteds;
+        }
 
         #endregion
         // ================================================================================================================
