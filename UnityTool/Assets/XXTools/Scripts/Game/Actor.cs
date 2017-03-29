@@ -13,6 +13,7 @@ public class Actor : MonoBehaviour {
         public string name;
         public string endString;
         public SkinnedMeshRenderer smr;
+        [SerializeField]
         public List<string> canSwapList;
 
         public Mesh selfMesh; //保留原来自身的mesh
@@ -26,6 +27,18 @@ public class Actor : MonoBehaviour {
             canSwapList = new List<string>();
             selfMesh = this.smr.sharedMesh;
         }
+
+        public void SwapMesh(int i)
+        {
+            if (canSwapList.Count <= i)
+                return;
+
+            string compName = canSwapList[i];
+
+            GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/XXTools Data/Database_Data/ActorsCom/" + compName + ".prefab");
+            smr.sharedMesh = go.GetComponentInChildren<SkinnedMeshRenderer>().sharedMesh;
+        }
+
     }
 
    
@@ -60,6 +73,11 @@ public class Actor : MonoBehaviour {
     public List<ActorComponent> GetComponents()
     {
         return components;
+    }
+
+    public ActorComponent GetComp(int idx)
+    {
+        return components[idx];
     }
 
     private bool inited = false;

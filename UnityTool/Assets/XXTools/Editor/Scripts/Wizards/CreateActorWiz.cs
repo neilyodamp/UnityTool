@@ -167,7 +167,7 @@ namespace XXToolsEditor
             }
                      
             actor.InitActor(actor.gameObject, acList);
-
         }
+
     }
 }

@@ -138,6 +138,8 @@ namespace XXToolsEditor
                         ac.canSwapList.Add(name);
                 }
             }
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 }
