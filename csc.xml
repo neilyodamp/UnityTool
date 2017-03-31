@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <refList>
+        <ref path="path1"/>
+        <ref path="path2"/>
+        <ref path="path3"/>
+        <ref path="path4"/>
+    </refList>
+    <genDllList>
+        <genDll name="name1.dll" source="Assets\1\*.cs"/>
+        <genDll name="name2.dll" source="Assets\2\*.cs"/>
+        <genDll name="name3.dll" source="Assets\3\*.cs"/>
+        <genDll name="name4.dll" source="Assets\4\*.cs"/>
+    </genDllList>
+</root>
